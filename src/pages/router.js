@@ -1,8 +1,8 @@
+import React from "react";
 import { useRoute } from "react-router5";
-import { MainLayout } from "./components/Layout";
-import { Inbox, Compose, Contacts, Message, NotFound } from "./pages";
+import { Inbox, Compose, Contacts, Message, NotFound } from "./index";
 
-const RenderPage = () => {
+function Router() {
   const { route } = useRoute();
 
   if (route.name === "inbox") {
@@ -22,14 +22,6 @@ const RenderPage = () => {
   }
 
   return <NotFound />;
-};
-
-function App() {
-  return (
-    <MainLayout>
-      <RenderPage />
-    </MainLayout>
-  );
 }
 
-export default App;
+export default Router;
